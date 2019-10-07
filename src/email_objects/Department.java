@@ -46,7 +46,7 @@ public class Department {
 	public String getDescription() {
 		return description;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Department [ID=" + ID + ", name=" + name + ", description=" + description + "]";
