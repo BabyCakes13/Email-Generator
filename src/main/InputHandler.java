@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * Class which handles input from the user.
+ * 
  * @author babycakes
  *
  */
@@ -13,7 +14,8 @@ public class InputHandler {
 	Scanner scan;
 
 	/**
-	 * Construtor of the class, initialising a scanner for input reading from the console.
+	 * Construtor of the class, initialising a scanner for input reading from the
+	 * console.
 	 */
 	public InputHandler() {
 		scan = new Scanner(System.in);
@@ -21,7 +23,9 @@ public class InputHandler {
 
 	/**
 	 * Method which asks the user for the ID of the department.
-	 * @return int: The ID of the department, or -1 if the reading failed due to wrong arguemnts given.
+	 * 
+	 * @return int: The ID of the department, or -1 if the reading failed due to
+	 *         wrong arguemnts given.
 	 */
 	public int askDepartmentID() {
 		int departmentID = -1;

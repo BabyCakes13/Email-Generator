@@ -2,6 +2,7 @@ package email_objects;
 
 /**
  * Class which represents an object of type department.
+ * 
  * @author babycakes
  *
  */
@@ -13,8 +14,9 @@ public class Department {
 
 	/**
 	 * Constructor of Department class.
-	 * @param ID: An unique id representing the department.
-	 * @param name: The name of the department.
+	 * 
+	 * @param ID:          An unique id representing the department.
+	 * @param name:        The name of the department.
 	 * @param description: The description of the department.
 	 */
 	public Department(int ID, String name, String description) {
@@ -25,6 +27,7 @@ public class Department {
 
 	/**
 	 * Getter for the department ID.
+	 * 
 	 * @return int: ID of the department.
 	 */
 	public int getID() {
@@ -33,6 +36,7 @@ public class Department {
 
 	/**
 	 * Getter for the name of the department.
+	 * 
 	 * @return String: Name of the department.
 	 */
 	public String getName() {
@@ -41,12 +45,13 @@ public class Department {
 
 	/**
 	 * Getter for the description of the department.
+	 * 
 	 * @return String: The description of the department.
 	 */
 	public String getDescription() {
 		return description;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Department [ID=" + ID + ", name=" + name + ", description=" + description + "]";
