@@ -3,6 +3,13 @@ package email_objects;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+/**
+ * Class which handles finding the name of the department based on the
+ * department input ID, given by the user at console.
+ * 
+ * @author babycakes
+ *
+ */
 public class DepartmentHandler {
 
 	private int chosenID;
