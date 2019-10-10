@@ -1,11 +1,17 @@
 package main;
 
 import email_objects.DepartmentHandler;
+import email_objects.Password;
 
 public class Main {
 
 	public static void main(String[] args) {
-		inputApp();
+		passwordTest();
+	}
+	
+	public static void passwordTest() {
+		Password password =  new Password();
+		System.out.println("Password is: " + password.generateRandomPassword(10));
 	}
 
 	public static void inputApp() {
