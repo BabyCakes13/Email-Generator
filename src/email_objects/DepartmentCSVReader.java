@@ -1,4 +1,4 @@
-package files;
+package email_objects;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,8 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-
-import email_objects.Department;
 
 public class DepartmentCSVReader {
 

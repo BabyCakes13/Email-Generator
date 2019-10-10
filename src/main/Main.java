@@ -1,6 +1,6 @@
 package main;
 
-import files.DepartmentCSVReader;
+import email_objects.DepartmentHandler;
 
 public class Main {
 
@@ -8,15 +8,12 @@ public class Main {
 		inputApp();
 	}
 
-	public static void inputUser() {
-		InputHandler ih = new InputHandler();
-		System.out.println(ih.askDepartmentID());
-	}
-
 	public static void inputApp() {
-		DepartmentCSVReader dcsvr = new DepartmentCSVReader(
-				"/home/babycakes/workspace/Email-Generator/src/files/departments");
-		System.out.println(dcsvr.getReadDepartments().toString());
+		InputHandler ih = new InputHandler();
+		int chosenID = ih.askDepartmentID();
+		
+		DepartmentHandler dh = new DepartmentHandler(chosenID);
+		dh.searchID();
 
 	}
 
