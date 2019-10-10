@@ -10,7 +10,7 @@ import java.util.InputMismatchException;
 public class DepartmentCSVReader {
 
 	private final String SPLITTER = "\",";
-	private final String filePath;
+	private static final String filePath = "/home/babycakes/workspace/Email-Generator/src/files/departments";
 	private ArrayList<Department> departments;
 
 	/**
@@ -19,8 +19,7 @@ public class DepartmentCSVReader {
 	 * 
 	 * @param filePath: Path to the department info file.
 	 */
-	public DepartmentCSVReader(String filePath) {
-		this.filePath = filePath;
+	public DepartmentCSVReader() {
 		departments = new ArrayList<Department>();
 	}
 

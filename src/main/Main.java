@@ -13,7 +13,8 @@ public class Main {
 		int chosenID = ih.askDepartmentID();
 		
 		DepartmentHandler dh = new DepartmentHandler(chosenID);
-		dh.searchID();
+		String name = dh.getSearchedDepartmentName();
+		System.out.println(name);
 
 	}
 
