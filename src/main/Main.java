@@ -6,15 +6,15 @@ import email_objects.Password;
 public class Main {
 
 	public static void main(String[] args) {
-		passwordTest();
-		passwordTest();
+		inputApp();
 		passwordTest();
 	}
 	
 	public static void passwordTest() {
 		Password password = new Password();
-		System.out.println("Password is: " + password.getPassword());
-		// assword.setNewPassword("", "MariaNuAreMulteMereDarIncearca");
+		System.out.println(password.getPassword());
+		password.setNewPassword();
+		System.out.println(password.getPassword());
 	}
 
 	public static void inputApp() {

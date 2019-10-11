@@ -14,8 +14,7 @@ public class InputHandler {
 	Scanner scan;
 
 	/**
-	 * Construtor of the class, initialising a scanner for input reading from the
-	 * console.
+	 * Construtor of the class, which initialises a scanner for user console input.
 	 */
 	public InputHandler() {
 		scan = new Scanner(System.in);
@@ -43,10 +42,35 @@ public class InputHandler {
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-		} finally {
-			scan.close();
 		}
 
 		return departmentID;
+	}
+
+	/**
+	 * Method which reads a password from the console. Used for current and new
+	 * password reading.
+	 * 
+	 * @param message:      String: The message to be displayed before reading.
+	 * @param characterSet: String:The set of allowed characters.
+	 * @return String: String: The password read from the console, empty String in
+	 *         case of failure.
+	 */
+	public String askPassword(String message, String characterSet) {
+		System.out.println(message);
+		String password = "";
+
+		try {
+			password = scan.nextLine();
+			if (!password.matches("[a-zA-Z0-9]*")) {
+				throw new IllegalArgumentException(
+						"The password must contain only characters from the available set: " + characterSet);
+			}
+		} catch (InputMismatchException e) {
+			System.out.println(e.getMessage());
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		return password;
 	}
 }
