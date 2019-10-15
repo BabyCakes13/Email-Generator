@@ -48,21 +48,15 @@ public class DepartmentHandler {
 	 * existent.
 	 * 
 	 * @return String: The name of the Department based on the searched Department
-	 *         ID.
+	 *         ID. Empty String if not found.
 	 */
 	public String getSearchedDepartmentName() {
-		try {
-			Department searchedDepartment = searchDepartment();
-			if (searchedDepartment == null) {
-				throw new NoSuchElementException();
-			} else {
-				return searchedDepartment.getName();
-			}
-
-		} catch (NoSuchElementException e) {
-			System.out.println("The department was not found.");
+		Department searchedDepartment = searchDepartment();
+		if (searchedDepartment == null) {
+			System.out.println("The department does not exist yet. Slot will be left empty for further fix.");
 			return "";
-		}
+		} 
+		return searchedDepartment.getName();
 	}
 
 }
