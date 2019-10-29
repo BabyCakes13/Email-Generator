@@ -52,7 +52,8 @@ public class Email {
 		email.append(".");
 		email.append(lastName.toLowerCase());
 		email.append("@");
-		email.append(department);
+		email.append(department);		
+		email.append(".");
 		email.append(companySuffix);
 
 		return email.toString();
