@@ -4,6 +4,11 @@ import java.util.Random;
 
 import main.InputHandler;
 
+/**
+ * Class which handles password actions such as creation or change.
+ * @author babycakes
+ *
+ */
 public class Password {
 
 	private String password = "";

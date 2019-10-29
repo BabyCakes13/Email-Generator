@@ -1,7 +1,6 @@
 package email_objects;
 
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
 
 /**
  * Class which handles finding the name of the department based on the
@@ -13,13 +12,17 @@ import java.util.NoSuchElementException;
 public class DepartmentHandler {
 
 	private int chosenID;
-
+	public static ArrayList<Department> departments;
+	
 	/**
-	 * Constructor of class DepartmentHandler.
-	 * 
-	 * @param chosenID: The department chosen by the user at console level.
+	 * Constructor of class DepartmentHandler. Creates the departments list.
 	 */
-	public DepartmentHandler(int chosenID) {
+	public DepartmentHandler() {
+		DepartmentCSVReader dcsvr = new DepartmentCSVReader();
+		departments = dcsvr.getReadDepartments();
+	}
+	
+	public void setChosenID(int chosenID) {
 		this.chosenID = chosenID;
 	}
 
@@ -30,16 +33,12 @@ public class DepartmentHandler {
 	 * @return Department: if found, null: otherwise.
 	 */
 	public Department searchDepartment() {
-		DepartmentCSVReader dcsvr = new DepartmentCSVReader();
-		ArrayList<Department> departments = dcsvr.getReadDepartments();
-
 		for (Department department : departments) {
 			if (department.getID() == chosenID) {
-				System.out.println("Department found: " + department.toString());
+				// System.out.println(department.toString());
 				return department;
 			}
 		}
-
 		return null;
 	}
 
@@ -55,8 +54,13 @@ public class DepartmentHandler {
 		if (searchedDepartment == null) {
 			System.out.println("The department does not exist yet. Slot will be left empty for further fix.");
 			return "";
-		} 
+		}
 		return searchedDepartment.getName();
+	}
+
+	public static void displayDepartments() {
+		System.out.println();
+		departments.forEach(department-> System.out.println(department.toString() + "\n"));
 	}
 
 }
